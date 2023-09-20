@@ -57,7 +57,7 @@ def is_valid_mobile(string):
 search_query = "مطب دندان پزشکی تهران"
 
 # Perform the Google search with tqdm progress bar
-search_results = list(search(search_query, num= 10, stop = 40))
+search_results = list(search(search_query, num= 100))
 with tqdm(total=len(search_results), desc="Processing Websites", dynamic_ncols=True) as pbar:
     for result in search_results:
         try:
@@ -115,7 +115,3 @@ with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
     csv_writer.writerows(data)
 
 print(f"Data saved to {csv_filename}")
-
-
-
-
